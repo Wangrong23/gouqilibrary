@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href="img/gqbook.ico">
+
+        <title>登录</title>
+
+        <style type="text/css">
+            .form-container{
+                margin: 0 auto;
+                width: 30%;
+            }
+        </style>
+        <!-- Bootstrap core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/public.css">
+        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/24.js"></script>
+
+    </head>
+
+    <body>
+
+        <div class="form-container">
+            <div class="col-md-12">
+                <form class="form-signin" method="post" action="loginCon">
+                    <h2 class="form-signin-heading">读者登录</h2>
+                    <label for="inputBookcardNum" class="sr-only">借书证号</label>
+                    <input type="text" id="inputBookcardNum" name="inputBookcardNum" class="form-control" placeholder="借书证号" required>
+                    <label for="inputPassword" class="sr-only">密码</label>
+                    <input type="password" id="inputPassword" name="inputPassword" class="form-control" placeholder="密码" required>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" value="remember-me"> 记住我
+                        </label>
+                    </div>
+                    <button class="btn btn-lg btn-default btn-block" type="submit">登录</button>
+                </form>
+                <a href="register">注册读者</a>
+            </div>
+
+        </div> <!-- /container -->
+
+    </body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="img/gqbook.ico">
+
+    <title>读者注册</title>
+
+    <style type="text/css">
+        .form-container{
+            margin: 0 auto;
+            width: 30%;
+        }
+    </style>
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/public.css">
+    <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap-datetimepicker.zh-CN.js"></script>
+    <script type="text/javascript" src="js/24.js"></script>
+    <script>
+        function check() {
+            var password = document.getElementById("inputPassword").value;
+            var password2 = document.getElementById("reinputPassword").value;
+            if (password !== password2) {
+                alert("密码输入不一致");
+                return false;
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+
+<div class="form-container">
+    <div class="col-md-12">
+        <form class="form-signin" method="post" action="registerCon" onsubmit="return check()">
+            <h2 class="form-signin-heading">读者注册</h2>
+
+            <label for="name" class="sr-only">姓名</label>
+            <input type="text" id="name" name="reader_name" class="form-control" placeholder="姓名" required>
+
+            <label for="sex" class="sr-only">性别</label>
+            <select class="form-control" name="reader_sex" id="sex">
+                <option value="男">性别：男</option>
+                <option value="女">性别：女</option>
+                <option value="null">性别：null</option>
+            </select>
+
+            <label for="birth_date" class="sr-only">出生年份</label>
+            <div class="input-group date form_datetime col-md-12" data-date="1990" data-date-format="yyyy" data-link-field="dtp_input1">
+                <input class="form-control" name="reader_birthyear" id="birth_date" placeholder="出生年份" size="16" type="text" value="" readonly>
+                <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+            </div>
+            <input type="hidden" id="dtp_input1" value="" />
+            <script type="text/javascript">
+                $(".form_datetime").datetimepicker({
+                    language:  'zh-CN',
+                    minView: 4,
+                    startView: 4,
+                    format: "yyyy",
+                    autoclose: true,
+                    todayBtn: true,
+                    pickerPosition: "bottom-left"
+                });
+            </script>
+            <label for="inputPassword" class="sr-only">密码</label>
+            <input type="password" id="inputPassword" name="reader_password" class="form-control" placeholder="密码" required>
+
+            <label for="reinputPassword" class="sr-only">重复密码</label>
+            <input type="password" id="reinputPassword" name="reader_password" class="form-control" placeholder="重复密码" required>
+            <span id="warning"></span>
+
+            <label for="contact" class="sr-only">联系方式</label>
+            <input type="text" id="contact" name="contact" class="form-control" placeholder="联系方式" required>
+
+            <label for="documentNum" class="sr-only">证件号码</label>
+            <input type="text" id="documentNum" name="document_num" class="form-control" placeholder="证件号码" required>
+
+            <input class="btn btn-lg btn-default btn-block" type="submit">
+        </form>
+        <a href="login">已有账号</a>
+    </div>
+
+</div> <!-- /container -->
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+#include("layout.html")
+#@layout()
+#define content()
+<h3>书架</h3>
+#set(typelist = toShelfs())
+#for(x : typelist)
+<div class="col-md-2">
+    <div class="thumbnail">
+        <img src="img/shelf.jpg" alt="#(x.booktype)">
+        <div class="caption">
+            <h4>#(x.booktype)</h4>
+        </div>
+        <div class="button-group">
+            <a href="shelf?type=#(x.booktype)" class="btn btn-default" role="button">前往书架</a>
+        </div>
+    </div>
+</div>
+#end
+#end

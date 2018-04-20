@@ -1,0 +1,21 @@
+#include("layout.html")
+#@layout()
+#define content()
+#set(page = getPage())
+<h3>书库</h3>
+#set(booklist = toFind(page))
+#for(x : booklist)
+<div class="col-md-2">
+    <div class="thumbnail">
+        <img src="#(x.imgsrc)" alt="#(x.bookname)">
+        <div class="caption">
+            <h4>#(x.bookname)</h4>
+        </div>
+        <div class="button-group">
+            <a href="borrow?bookid=#(x.id)" class="btn btn-default" role="button">借书</a>
+            <a href="mark?bookid=#(x.id)" class="btn btn-default" role="button">码住</a>
+        </div>
+    </div>
+</div>
+#end
+#end

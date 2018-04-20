@@ -1,0 +1,20 @@
+#include("layout.html")
+#@layout()
+#define content()
+#set(readerId = getReaderId())
+<h3>我看过</h3>
+#set(bookidlist = toFindMyReadIt(readerId))
+#for(x : bookidlist)
+#set(booklist = toFindById(x.book_id))
+<div class="col-md-2">
+    <div class="thumbnail">
+        <img src="#(booklist[0].imgsrc)" alt="#(booklist[0].bookname)">
+        <div class="caption">
+            <h4>#(booklist[0].bookname)</h4>
+            <p>还书时间：#(x.back_date)></p>
+            <!--<abbr title=""></abbr>-->
+        </div>
+    </div>
+</div>
+#end
+#end
