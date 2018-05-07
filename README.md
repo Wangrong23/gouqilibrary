@@ -5,7 +5,7 @@
 <br>
 运行方法：
 <br>
-终端输入：
+终端输入-
 <br>
 1.mvn install
 <br>
