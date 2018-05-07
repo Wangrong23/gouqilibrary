@@ -5,6 +5,10 @@
 <br>
 终端输入-
 <br>
-1.mvn install
+1.git clone https://github.com/Wangrong23/gouqilibrary
 <br>
-2.java -jar target/xxxx.jar
+2.cd gouqilibrary
+<br>
+3.mvn install
+<br>
+4.java -jar target/gouqilibrary-1.0-SNAPSHOT.jar
