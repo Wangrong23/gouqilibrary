@@ -28,7 +28,7 @@ public class ProjectConfig extends JFinalConfig {
     }
 
     public void configPlugin(Plugins plugins) {
-        DruidPlugin dp = new DruidPlugin("jdbc:mysql://localhost/gouqilibrary", "root", "red1902167838");
+        DruidPlugin dp = new DruidPlugin("jdbc:mysql://localhost/gouqilibrary?serverTimezone=UTC&characterEncoding=utf-8", "root", "red1902167838");
         plugins.add(dp);
         ActiveRecordPlugin arp = new ActiveRecordPlugin(dp);
 
